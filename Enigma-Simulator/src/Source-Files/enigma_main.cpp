@@ -12,6 +12,7 @@ void enigma_main::loadFromFile()
 {
 }
 
+
 void enigma_main::generateKeypair()
 {
 }
@@ -24,6 +25,7 @@ void enigma_main::decryptMessageWithKey()
 {
 }
 
+
 void enigma_main::savePublicKeyToFile()
 {
 }
@@ -31,6 +33,7 @@ void enigma_main::savePublicKeyToFile()
 void enigma_main::loadPublicKeyToFile()
 {
 }
+
 
 void enigma_main::savePrivateKeyToFile()
 {
