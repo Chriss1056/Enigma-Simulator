@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <fstream>
 
 struct enigma
 {
@@ -12,16 +13,16 @@ namespace enigma_main
 {
 	void init();
 
-	void saveToFile();
-	void loadFromFile();
+	void saveMessageToFile(int& returnValue, const char*& fileName, std::vector<char>& msg);
+	void loadMessageFromFile(int& returnValue, const char*& fileName, std::vector<char>& msg);
 
-	void generateKeypair();
-	void encryptMessageWithKey();
-	void decryptMessageWithKey();
+	void generateKeypair(int& returnValue);
+	void encryptMessageWithKey(int& returnValue);
+	void decryptMessageWithKey(int& returnValue);
 
-	void savePublicKeyToFile();
-	void loadPublicKeyToFile();
+	void savePublicKeyToFile(int& returnValue);
+	void loadPublicKeyFromFile(int& returnValue);
 
-	void savePrivateKeyToFile();
-	void loadPrivateKeyToFile();
+	void savePrivateKeyToFile(int& returnValue);
+	void loadPrivateKeyFromFile(int& returnValue);
 }
