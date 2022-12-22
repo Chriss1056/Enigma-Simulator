@@ -7,14 +7,14 @@ struct enigma
 {
 	std::vector<std::vector<int>> walzen;
 	std::vector<int> positions;
+	const char*& fileName;
+	std::vector<char>& msg;
 };
 
 namespace enigma_main
 {
-	void init();
-
-	void saveMessageToFile(int& returnValue, const char*& fileName, std::vector<char>& msg);
-	void loadMessageFromFile(int& returnValue, const char*& fileName, std::vector<char>& msg);
+	void saveMessageToFile(int& returnValue, struct enigma& enigma);
+	void loadMessageFromFile(int& returnValue, struct enigma& enigma);
 
 	void generateKeypair(int& returnValue);
 	void encryptMessageWithKey(int& returnValue);

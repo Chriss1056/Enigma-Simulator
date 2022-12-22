@@ -1,29 +1,25 @@
 #include "enigma_main.hpp"
 
-void enigma_main::init()
-{
-}
-
-void enigma_main::saveMessageToFile(int& returnValue, const char*& fileName, std::vector<char>& msg)
+void enigma_main::saveMessageToFile(int& returnValue, struct enigma& enigma)
 {
 	std::fstream file;
-	file.open(fileName, std::ios::_Nocreate | std::ios::binary | std::ios::trunc | std::ios::out);
+	file.open(enigma.fileName, std::ios::_Nocreate | std::ios::binary | std::ios::trunc | std::ios::out);
 	if (!file)
 	{
 		returnValue = 1;
 		return;
 	}
-	for (int i = 0; i < msg.size(); i++)
+	for (int i = 0; i < enigma.msg.size(); i++)
 	{
-		file << msg[i];
+		file << enigma.msg[i];
 	}
 	file.close();
 }
 
-void enigma_main::loadMessageFromFile(int& returnValue, const char*& fileName, std::vector<char>& msg)
+void enigma_main::loadMessageFromFile(int& returnValue, struct enigma& enigma)
 {
 	std::fstream file;
-	file.open(fileName, std::ios::_Nocreate | std::ios::binary | std::ios::in);
+	file.open(enigma.fileName, std::ios::_Nocreate | std::ios::binary | std::ios::in);
 	if (!file)
 	{
 		returnValue = 1;
@@ -32,12 +28,12 @@ void enigma_main::loadMessageFromFile(int& returnValue, const char*& fileName, s
 	file.seekg(0, std::ios::end);
 	int fileSize = file.tellg();
 	file.seekg(0, std::ios::beg);
-	msg.resize(fileSize);
+	enigma.msg.resize(fileSize);
 	char tmp[sizeof(fileSize)];
-	file.read(tmp, msg.size());
-	for (int i = 0; i < msg.size(); i++)
+	file.read(tmp, enigma.msg.size());
+	for (int i = 0; i < enigma.msg.size(); i++)
 	{
-		msg[i] = tmp[i];
+		enigma.msg[i] = tmp[i];
 	}
 	free(tmp);
 	file.close();
