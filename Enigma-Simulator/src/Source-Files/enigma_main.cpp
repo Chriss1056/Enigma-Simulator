@@ -33,7 +33,7 @@ void enigma_main::loadMessageFromFile(int& returnValue, const char*& fileName, s
 	int fileSize = file.tellg();
 	file.seekg(0, std::ios::beg);
 	msg.resize(fileSize);
-	char* tmp = nullptr;
+	char tmp[sizeof(fileSize)];
 	file.read(tmp, msg.size());
 	for (int i = 0; i < msg.size(); i++)
 	{
