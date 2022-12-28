@@ -1,5 +1,9 @@
 #include "enigma_main.hpp"
 
+void enigma_main::init(int& returnValue, struct enigma& enigma)
+{
+}
+
 void enigma_main::saveMessageToFile(int& returnValue, struct enigma& enigma)
 {
 	std::fstream file;
@@ -40,7 +44,7 @@ void enigma_main::loadMessageFromFile(int& returnValue, struct enigma& enigma)
 }
 
 
-void enigma_main::generateKeypair(int& returnValue)
+void enigma_main::generateKey(int& returnValue)
 {
 }
 
@@ -53,19 +57,10 @@ void enigma_main::decryptMessageWithKey(int& returnValue)
 }
 
 
-void enigma_main::savePublicKeyToFile(int& returnValue)
+void enigma_main::saveKeyToFile(int& returnValue)
 {
 }
 
-void enigma_main::loadPublicKeyFromFile(int& returnValue)
-{
-}
-
-
-void enigma_main::savePrivateKeyToFile(int& returnValue)
-{
-}
-
-void enigma_main::loadPrivateKeyFromFile(int& returnValue)
+void enigma_main::loadKeyFromFile(int& returnValue)
 {
 }

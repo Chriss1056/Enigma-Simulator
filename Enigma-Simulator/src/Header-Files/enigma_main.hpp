@@ -13,16 +13,15 @@ struct enigma
 
 namespace enigma_main
 {
+	void init(int& returnValue, struct enigma& enigma);
+
 	void saveMessageToFile(int& returnValue, struct enigma& enigma);
 	void loadMessageFromFile(int& returnValue, struct enigma& enigma);
 
-	void generateKeypair(int& returnValue);
+	void generateKey(int& returnValue);
 	void encryptMessageWithKey(int& returnValue);
 	void decryptMessageWithKey(int& returnValue);
 
-	void savePublicKeyToFile(int& returnValue);
-	void loadPublicKeyFromFile(int& returnValue);
-
-	void savePrivateKeyToFile(int& returnValue);
-	void loadPrivateKeyFromFile(int& returnValue);
+	void saveKeyToFile(int& returnValue);
+	void loadKeyFromFile(int& returnValue);
 }
