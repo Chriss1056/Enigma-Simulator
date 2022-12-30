@@ -1,10 +1,10 @@
 #include "enigma_main.hpp"
 
-void enigma_main::init(int& returnValue, struct enigma& enigma)
+void enigma_main::init(int& returnValue, class enigma& enigma)
 {
 }
 
-void enigma_main::saveMessageToFile(int& returnValue, struct enigma& enigma)
+void enigma_main::saveMessageToFile(int& returnValue, class enigma& enigma)
 {
 	std::fstream file;
 	file.open(enigma.fileName, std::ios::_Nocreate | std::ios::binary | std::ios::trunc | std::ios::out);
@@ -20,7 +20,7 @@ void enigma_main::saveMessageToFile(int& returnValue, struct enigma& enigma)
 	file.close();
 }
 
-void enigma_main::loadMessageFromFile(int& returnValue, struct enigma& enigma)
+void enigma_main::loadMessageFromFile(int& returnValue, class enigma& enigma)
 {
 	std::fstream file;
 	file.open(enigma.fileName, std::ios::_Nocreate | std::ios::binary | std::ios::in);
