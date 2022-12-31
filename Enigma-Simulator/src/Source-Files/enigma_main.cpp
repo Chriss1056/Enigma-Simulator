@@ -30,7 +30,7 @@ void enigma_main::loadMessageFromFile(int& returnValue, class enigma& enigma)
 		return;
 	}
 	file.seekg(0, std::ios::end);
-	int fileSize = file.tellg();
+	std::streamoff fileSize = file.tellg();
 	file.seekg(0, std::ios::beg);
 	enigma.msg.resize(fileSize);
 	char tmp[sizeof(fileSize)];
@@ -43,24 +43,31 @@ void enigma_main::loadMessageFromFile(int& returnValue, class enigma& enigma)
 	file.close();
 }
 
+#include <iostream>
 
-void enigma_main::generateKey(int& returnValue)
+void enigma_main::generateKey(int& returnValue, class enigma& enigma)
+{
+	std::time_t tmp = std::time(0);
+#pragma warning(suppress : 4996)
+	enigma.time = std::gmtime(&tmp);
+#pragma warning(default : 4996)
+	enigma.time->tm_year = enigma.time->tm_year + 1900;
+	enigma.time->tm_mon = enigma.time->tm_mon + 1;
+}
+
+void enigma_main::encryptMessageWithKey(int& returnValue, class enigma& enigma)
 {
 }
 
-void enigma_main::encryptMessageWithKey(int& returnValue)
-{
-}
-
-void enigma_main::decryptMessageWithKey(int& returnValue)
+void enigma_main::decryptMessageWithKey(int& returnValue, class enigma& enigma)
 {
 }
 
 
-void enigma_main::saveKeyToFile(int& returnValue)
+void enigma_main::saveKeyToFile(int& returnValue, class enigma& enigma)
 {
 }
 
-void enigma_main::loadKeyFromFile(int& returnValue)
+void enigma_main::loadKeyFromFile(int& returnValue, class enigma& enigma)
 {
 }

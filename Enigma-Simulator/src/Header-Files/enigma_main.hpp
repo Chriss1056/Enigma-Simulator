@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <fstream>
+#include <ctime>
 
 class enigma
 {
@@ -10,6 +11,7 @@ public:
 	std::vector<int> positions;
 	const char* fileName;
 	std::vector<char> msg;
+	std::tm* time;
 };
 
 namespace enigma_main
@@ -19,10 +21,10 @@ namespace enigma_main
 	void saveMessageToFile(int& returnValue, class enigma& enigma);
 	void loadMessageFromFile(int& returnValue, class enigma& enigma);
 
-	void generateKey(int& returnValue);
-	void encryptMessageWithKey(int& returnValue);
-	void decryptMessageWithKey(int& returnValue);
+	void generateKey(int& returnValue, class enigma& enigma);
+	void encryptMessageWithKey(int& returnValue, class enigma& enigma);
+	void decryptMessageWithKey(int& returnValue, class enigma& enigma);
 
-	void saveKeyToFile(int& returnValue);
-	void loadKeyFromFile(int& returnValue);
+	void saveKeyToFile(int& returnValue, class enigma& enigma);
+	void loadKeyFromFile(int& returnValue, class enigma& enigma);
 }
