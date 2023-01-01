@@ -7,7 +7,7 @@
 class enigma
 {
 public:
-	std::vector<std::vector<int>> walzen;
+	std::vector<std::vector<int>> rotors;
 	std::vector<int> positions;
 	const char* fileName;
 	std::vector<char> msg;

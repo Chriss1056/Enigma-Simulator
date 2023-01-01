@@ -2,6 +2,32 @@
 
 void enigma_main::init(int& returnValue, class enigma& enigma)
 {
+	const char* rotorstmp[] = {"EKMFLGDQVZNTOWYHXUSPAIBRCJ",
+							"AJDKSIRUXBLHWTMCQGZNPYFVOE",
+							"BDFHJLCPRTXVZNYEIWGAKMUSQO",
+							"ESOVPZJAYQUIRHXLNFTGKDCMWB",
+							"VZBRGITYUPSDNHLXAWMJQOFECK",
+							"JPGVOUMFYQBENHZRDKASXLICTW",
+							"NZJHGRCXMYSWBOUFAIVLPEKQDT",
+							"FKQHTLXOCBJSPDZRAMEWNIUYGV" };
+	
+	enigma.rotors.resize(8);
+	for (int x = 0; x < enigma.rotors.size(); x++)
+	{
+		enigma.rotors[x].resize(26);
+	}
+
+	for (int x = 0; x < enigma.rotors.size(); x++)
+	{
+		for (int y = 0; y < enigma.rotors[x].size(); y++)
+		{
+			enigma.rotors[x][y] = rotorstmp[x][y];
+		}
+	}
+
+	enigma.positions.resize(8);
+
+	returnValue = 0;
 }
 
 void enigma_main::saveMessageToFile(int& returnValue, class enigma& enigma)
