@@ -43,7 +43,6 @@ void enigma_main::loadMessageFromFile(int& returnValue, class enigma& enigma)
 	file.close();
 }
 
-#include <iostream>
 
 void enigma_main::generateKey(int& returnValue, class enigma& enigma)
 {
