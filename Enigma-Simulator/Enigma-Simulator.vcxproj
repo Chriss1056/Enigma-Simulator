@@ -176,10 +176,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Source-Files\enigma_main.cpp" />
+    <ClCompile Include="src\Source-Files\enigma_utility.cpp" />
     <ClCompile Include="src\Source-Files\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Header-Files\enigma_main.hpp" />
+    <ClInclude Include="src\Header-Files\enigma_utility.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

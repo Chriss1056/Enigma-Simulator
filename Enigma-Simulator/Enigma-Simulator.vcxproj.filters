@@ -21,9 +21,15 @@
     <ClCompile Include="src\Source-Files\enigma_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Source-Files\enigma_utility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Header-Files\enigma_main.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Header-Files\enigma_utility.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
