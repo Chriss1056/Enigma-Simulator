@@ -27,6 +27,11 @@ void enigma_main::init(int& returnValue, class enigma& enigma)
 
 	enigma.positions.resize(8);
 
+	enigma.msg.resize(1);
+	enigma.msg[0] = '\0';
+
+	enigma.time = (tm*)'\0';
+
 	returnValue = 0;
 }
 

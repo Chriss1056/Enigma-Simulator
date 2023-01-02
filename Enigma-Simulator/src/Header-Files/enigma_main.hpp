@@ -4,6 +4,8 @@
 #include <fstream>
 #include <ctime>
 
+#include "enigma_utility.hpp"
+
 class enigma
 {
 public:
