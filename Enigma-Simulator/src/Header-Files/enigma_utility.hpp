@@ -1,6 +1,7 @@
 #pragma once
 
 #include <windows.h>
+#include <conio.h>
 
 enum class foregroundColors
 {

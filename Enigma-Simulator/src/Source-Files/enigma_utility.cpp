@@ -2,6 +2,12 @@
 
 void enigma_utility::getKey(int& returnValue, int& keyCode)
 {
+	int key = _getch();
+	if (key >= 224)
+	{
+		key = key + _getch();
+	}
+	keyCode = key;
 	returnValue = 0;
 }
 
