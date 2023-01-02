@@ -26,6 +26,10 @@ void enigma_main::init(int& returnValue, class enigma& enigma)
 	}
 
 	enigma.positions.resize(8);
+	for (int i = 0; i < enigma.positions.size(); i++)
+	{
+		enigma.positions[i] = 0;
+	}
 
 	enigma.msg.resize(1);
 	enigma.msg[0] = '\0';
