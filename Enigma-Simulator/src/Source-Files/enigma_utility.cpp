@@ -70,6 +70,6 @@ void enigma_utility::cursorFillLevel(int& returnValue, int fillLevel)
 		returnValue = 1;
 		return;
 	}
-	free(cursorInfo);
+	delete(cursorInfo);
 	returnValue = 0;
 }
