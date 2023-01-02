@@ -34,7 +34,7 @@ void enigma_main::init(int& returnValue, class enigma& enigma)
 	enigma.msg.resize(1);
 	enigma.msg[0] = '\0';
 
-	enigma.time = (tm*)'\0';
+	enigma.time = nullptr;
 
 	returnValue = 0;
 }
